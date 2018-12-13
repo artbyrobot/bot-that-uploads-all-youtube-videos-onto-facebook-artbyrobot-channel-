@@ -1,0 +1,78 @@
+/*
+
+Instructions:
+
+just run once and it will just work...
+
+
+Printing Hallo World:
+
+This exe will print hello world and then close down
+
+
+
+
+nextSection                 our to do list section
+
+    ------to do------
+    
+    
+    
+    
+    
+    
+    
+*/
+
+
+#include <iostream>
+ 
+using namespace std;
+ 
+ 
+bool runProgram = true;
+bool printHelloWorld = true;
+bool printingHelloWorldProgramWaitingForPrintingHelloWorld = true;
+
+ 
+int main()
+{
+ 
+ 
+    while (runProgram == true)
+    {
+ 
+        if (printHelloWorld == true)
+        {
+            printHelloWorld = false;
+ 
+            cout << "Hello World!\n";
+            system("Pause");   
+            
+            printingHelloWorldCompleted = true;
+        }
+        
+        
+        
+        
+        
+        
+        
+        if (printingHelloWorldProgramWaitingForPrintingHelloWorld == true && printingHelloWorldCompleted == true)
+        {
+            printingHelloWorldProgramWaitingForPrintingHelloWorld = false;
+            printingHelloWorldCompleted = false;
+            
+            
+            cout << "Hello World!\n";
+            
+            
+            runProgram = false;
+        }
+        
+ 
+    }
+ 
+   
+    return 0;
+}
