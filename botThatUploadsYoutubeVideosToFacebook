@@ -78,15 +78,25 @@ nextSection                 our to do list section
 
 
 
-#define _WIN32_WINNT 0x0500            //tells the compiler that this is windows2000 or higher... by telling the compiler this, we gain access to the GetConsoleWindow(); command!  This is a necessary command for being able to get the handle of the console window... once we have the handle of the window, we can tell it to do things.. like dissapear for a while! lol 
+#define _WIN32_WINNT 0x0501            //tells the compiler that this is windowsXP or higher... by telling the compiler this, we gain access to the GetConsoleWindow(); command and the PrintWindow(); command  
                                          //also note that this command MUST be written in BEFORE #include <windows.h>...
+                                         
+                                       
 #include <iostream>
 #include <windows.h>
+#include <Psapi.h>  //enables us to use the EnumProcesses function which lets us locate all processes with the name My Other Game.exe and close them if they are open - perfect for restarter closing strays...
+#include <Shlwapi.h>  //enables us to use the PathIsDirectory function
+#include <winsock2.h>  //implements the tcp/ip library for access to commands involving socket based packet sending in realtime using tcp protocol for my realtime communications needs for fightingPits and for realtime remote desktopping...
 #include <iomanip>
-#include <time.h>  //allows getting system time
-#include <math.h>  //allows use of sqrt() function...
+#include <time.h>    //allows getting system time
+#include <math.h>     //allows use of sqrt() function...
 #include <graphics.h>      //the header we need to use for creating of windows using borland's winBGlm library...
-#include <fstream>    // must include this header in order to access files
+#include <fstream>     //must include this header in order to access files
+#include <wininet.h>    //implements ftp command library for access to commands like InternetOpen and InternetConnect; also had to include this library in "tools">"compiler options">"add these lines to linker" as -lwininet... the library wininet is included with dev C++ in its libraries folder...
+#include <GL/gl.h>  //header file for the openGL32 library
+#include <GL/glu.h>  //header file for the glu32 library which is the openGL utility library
+#include <security.h>  //Header file for secured socket communications SSPI client and server stuff with authentication; goes with secur32.lib
+
 
 using namespace std;    
 
